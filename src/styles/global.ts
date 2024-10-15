@@ -16,7 +16,7 @@ body{
   --webkit-font-smoothing: antialiased;
 }
 
-border-style, input, button{
+body, input, button{
   font-family:'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1rem;
