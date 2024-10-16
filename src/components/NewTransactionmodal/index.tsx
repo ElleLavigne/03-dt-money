@@ -20,19 +20,19 @@ export function NewTransactionModal() {
           <input type="text" placeholder="Descrição" required />
           <input type="Number" placeholder="Preço" required />
           <input type="text" placeholder="Categoria" required />
-          <button type="submit">Cadastrar</button>
 
           <TransactionType>
-            <TransactionTypeButton variant="income">
-              <ArrowCircleUp size={24}/>
-                Entrada
+            <TransactionTypeButton variant="income" value="income">
+              <ArrowCircleUp size={24} />
+              Entrada
             </TransactionTypeButton>
 
-            <TransactionTypeButton variant="outcome">
-              <ArrowCircleDown size={24}/>
-                Saída
+            <TransactionTypeButton variant="outcome" value="outcome">
+              <ArrowCircleDown size={24} />
+              Saída
             </TransactionTypeButton>
           </TransactionType>
+          <button type="submit">Cadastrar</button>
         </form>
       </Content>
     </Dialog.Portal>
