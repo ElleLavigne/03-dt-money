@@ -15,6 +15,22 @@
        "category": "Alimentação",
        "price": "50",
        "createAt": "2024-10-15T17:05:44.703Z"
-     }
+     },
+      {
+        "id": 3,
+        "description": "Viagem ",
+        "type": "outcome",
+        "category": "Lazer",
+        "price": "500",
+        "createAt": "2024-10-15T17:05:44.703Z"
+      },
+      {
+        "id": 4,
+        "description": "Aluguel ",
+        "type": "outcome",
+        "category": "Despesa fixa",
+        "price": "1500",
+        "createAt": "2024-10-15T17:05:44.703Z"
+      }
   ]
 }
