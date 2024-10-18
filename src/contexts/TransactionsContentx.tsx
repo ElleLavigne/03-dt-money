@@ -48,7 +48,6 @@ const [transactions, setTransactions] = useState<Transaction[]>([])
   useEffect(() =>{
     console.log('transactions mudou -->', transactions)
   }, [transactions])
-  
 
   // async function fetchTransactions(query?: string) {
   //   const response = await api.get('transactions', {
