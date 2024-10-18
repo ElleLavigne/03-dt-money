@@ -9,16 +9,24 @@ interface Transaction {
   category: string
   createAt: string
 }
+interface CreateTransactionInput {
+  description: string,
+  price: number,
+  category: string,
+  type: 'income' | 'outcome'
+}
 
 interface TransactionContextType {
   transactions: Transaction[]
   fetchTransactions: (query?: string) => Promise<void>
+  createTransaction: (data:CreateTransactionInput) => Promise<void>
 }
 
 interface TransactionsProviderProps {
 
   children: ReactNode
 }
+
 
 export const TransactionsContext = createContext({} as TransactionContextType)
 
@@ -40,7 +48,18 @@ const [transactions, setTransactions] = useState<Transaction[]>([])
       setTransactions(response.data)
     }
   }
-
+  
+  async function createTransaction(data: CreateTransactionInput) {
+   const { description, price, category, type} = data
+    const response = await api.post('transactions', {
+      description,
+      price,
+      category,
+      type,
+      createAt: new Date(),
+   })
+   setTransactions(state => [...state, response.data])
+  }
   useEffect(() => {
     fetchTransactions()
   }, [])
@@ -64,7 +83,14 @@ const [transactions, setTransactions] = useState<Transaction[]>([])
   // }, [])
 
   return (
-    <TransactionsContext.Provider value={{ transactions, fetchTransactions }}>
+    <TransactionsContext.Provider 
+    value={
+      { 
+      transactions,
+      fetchTransactions,
+      createTransaction
+         }
+      }>
       {children}
     </TransactionsContext.Provider>
   )
