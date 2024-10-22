@@ -45,8 +45,10 @@ const {createTransaction} = useContext(TransactionsContext)
       category,
       type
     })
+
    reset();
   }
+
 
   return (
     <Dialog.Portal>
@@ -82,7 +84,7 @@ const {createTransaction} = useContext(TransactionsContext)
           control={control}
           name='type'
           render={({field}) => {
-            console.log(field)
+           
             return (
               <TransactionType onChange={field.onChange} value={field.value}>
                 <TransactionTypeButton variant="income" value="income">

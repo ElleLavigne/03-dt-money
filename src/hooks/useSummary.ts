@@ -22,5 +22,6 @@ export function useSummary(){
        total: 0,
      }
    )
+   console.log('erro aqui' ,summary)
     return summary
   }
